@@ -4,7 +4,7 @@ const ImagenAnuncio = () => {
   return (
     <div className="mx-3">
          <Image 
-        src='/img/banner.jpeg'
+        src='/img/imagenAnuncio.jpeg'
         alt='banner'
         width={400}
         height={200}
