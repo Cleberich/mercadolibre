@@ -31,8 +31,8 @@ const ContenedorProductos = () => {
    
    
   return (
-    <div className="w-96 mx-auto mt-4 rounded-md">
-        <div className="bg-white ">
+    <div className="w-95 mx-auto mt-4 rounded-md">
+        <div className="bg-white w-95 mx-auto ">
         <h2 className="ml-5">Visto recientemente</h2>
         <hr></hr>
         </div>
@@ -51,7 +51,7 @@ const ContenedorProductos = () => {
                 </svg>
            </div>
         </div>
-        <div className="bg-white mt-3 rounded-md">
+        <div className="bg-white mt-3 w-95 rounded-md mx-auto">
         <h2 className="ml-5">Oferta del día</h2>
         <hr></hr>
         </div>
@@ -63,7 +63,7 @@ const ContenedorProductos = () => {
        />
        )): ''}
         </div>
-        <div className="bg-white mt-3 rounded-md">
+        <div className="bg-white mt-3 w-95 rounded-md mx-auto">
         <h2 className="mx-5 py-2">Relacionado con tus visitas en Electrónica, Audio y Video</h2>
         <hr></hr>
         </div>

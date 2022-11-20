@@ -10,7 +10,7 @@ const CardProductos = ({prod}) => {
    
   return (
     <>
-  <div className='flex w-96 mx-auto p-3 bg-white mb-3 rounded-md'>
+  <div className='flex w-95 mx-auto p-3 bg-white mb-3 rounded-md'>
      <div className='w-2/6'>
         <img className=""src={thumbnail}/>
      </div>

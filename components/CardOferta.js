@@ -10,7 +10,7 @@ const CardOferta = ({ofer}) => {
    
   return (
     <>
-  <div className='block w-96 mx-auto p-3  bg-white mb-3 rounded-md'>
+  <div className='block w-95 mx-auto p-3  bg-white mb-3 rounded-md'>
      <div className='w-6/6 mx-auto'>
         <img className="w-64 mx-auto" src={thumbnail}/>
      </div>

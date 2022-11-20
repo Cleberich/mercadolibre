@@ -26,3 +26,11 @@
     background-color: #ededed;
     height: 80vh;
 }
+.menusticky{
+    position: sticky;
+    top:20px;
+}
+.w-95{
+    width: 97%;
+   
+}
