@@ -1,26 +1,28 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-a {
-  color: inherit;
-  text-decoration: none;
+.contenedorCard{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
 }
-
-* {
-  box-sizing: border-box;
+.xs{
+    font-size: 8px;
 }
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+.xs-1{
+    font-size: 11px;
+}
+.resultados{
+    width: 100%;
+    height: 90vh;
+    text-align: left;
+}
+.ubicacion{
+    width: 100%;
+    height: 90vh;
+}
+.misCompras{
+    background-color: #ededed;
+    height: 80vh;
 }
