@@ -73,3 +73,14 @@
     display: grid;
     grid-template-columns: 1fr 7fr 1fr;
 }
+.user{
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: solid .2rem rgb(154, 152, 152);
+    padding: .3rem;
+}
+.font-boldito{
+    font-weight: 500;
+}
