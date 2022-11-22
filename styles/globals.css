@@ -62,9 +62,10 @@
     overflow-y: hidden;
 }
 .card{
-    max-width: 270px;
-    min-width: 250px;
-    height: 320px;
-    padding: 1rem;
+    max-width: 240px;
+    min-width: 220px;
+    height: 300px;
+    padding: 2rem;
+    margin-bottom: 80px;
 
 }
