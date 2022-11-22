@@ -84,12 +84,12 @@
 .font-boldito{
     font-weight: 500;
 }
-@media(min-width: 425px) { 
+@media(min-width: 430px) { 
     .mobile{
         display: none;
     }
  }
-@media(max-width: 424px) { 
+@media(max-width: 429px) { 
     .informativo{
     display: none;
     }

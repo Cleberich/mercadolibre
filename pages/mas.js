@@ -37,7 +37,7 @@ export default function mas() {
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
           <path strokeLinecap="round" strokeLinejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
           </svg>
-          <Link className="mx-3" href='/notificacion'>Notificaciones</Link>
+          <Link className="mx-3" href='/notificaciones'>Notificaciones</Link>
         </div>
         <div className='flex text-gray-700 my-6'>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -56,13 +56,13 @@ export default function mas() {
           <path strokeLinecap="round" strokeLinejoin="round" d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3z" />
           <path strokeLinecap="round" strokeLinejoin="round" d="M6 6h.008v.008H6V6z" />
           </svg>
-          <Link className="mx-3" href='/ofertas'>Ofertas</Link>
+          <Link className="mx-3" href='#'>Ofertas</Link>
         </div>
         <div className='flex text-gray-700 my-6'>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
           <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
-          <Link className="mx-3" href='/historial'>Historial</Link>
+          <Link className="mx-3" href='#'>Historial</Link>
           <p className="bg-blue-500 text-xs  px-1 my-auto ml-60 font-bold rounded-md text-white">Nuevo</p>
         </div>
       </div>
