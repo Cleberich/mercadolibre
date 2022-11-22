@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import Head from 'next/head';
 import useMl from "../hooks/useMl"
 import ItemResultado from "../components/ItemResultado";
 
@@ -7,6 +7,10 @@ export default function Busqueda() {
 
 
   return (
+    <>
+    <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    </Head>
     <main className="bg-amarillo">
        <div className="bg-amarillo py-4 flex justify-between menusticky">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 text-gray-400 mt-2 absolute left-5">
@@ -30,10 +34,11 @@ export default function Busqueda() {
                 key={resultado.id}
                 resultado={resultado}
                 />
-            ))}
+                ))}
   
       </div>
         </div>
     </main>
+    </>
   )
 }
