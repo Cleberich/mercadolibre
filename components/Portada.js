@@ -9,6 +9,7 @@ const Portada = () => {
         alt='banner'
         width={400}
         height={200}
+        priority={true}
         />
         <Image 
         src='/img/banner2.jpeg'
@@ -16,6 +17,7 @@ const Portada = () => {
         alt='banner 2'
         width={400}
         height={200}
+        priority={true}
         />
         <Image 
         src='/img/banner3.jpeg'
@@ -23,6 +25,7 @@ const Portada = () => {
         alt='banner 3'
         width={400}
         height={200}
+        priority={true}
         />
     </div>
   )

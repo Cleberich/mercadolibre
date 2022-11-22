@@ -12,7 +12,7 @@ const Card = ({celu}) => {
     <>
   <div className='flex w-95 mx-auto p-3 bg-white mb- rounded-md' onClick={()=>verDetallesGeneral(id)}>
      <div className='w-2/6'>
-        <img className=""src={thumbnail}/>
+        <Image width={200} height={200} alt={title} className=""src={thumbnail}/>
      </div>
     <div className='w-2/4 block'>
         <h1 className='text-sm'>{title}</h1>
