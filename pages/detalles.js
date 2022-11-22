@@ -3,14 +3,16 @@ import React from 'react'
 import { formatearDinero } from '../helpers/'
 import useMl from '../hooks/useMl'
 import Sugeridos from '../components/Sugeridos';
-
+import BarraInferior from '../components/BarraInferior'
 export default function Detalles() {
   const router = useRouter()
   const { detalle, sugeridos } = useMl()
+  console.log(detalle);
 
   return (
+<>
     <div className='bg-white h-screen'>
-    <div className='bg-amarillo py-4 flex justify-between'>
+    <div className='bg-amarillo py-4 flex justify-between sticky top-0'>
       <div>
         <button type='button' className='ml-2' onClick={()=>router.push('/')}>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -69,7 +71,7 @@ export default function Detalles() {
         <p className='xs-1 text-gray-600 ml-11 -mt-1'>Tienes 30 días desde que lo recibes</p>
       <h2 className='pl-3 text-sm my-3 text-bold'>Stock disponible</h2>
       <div className='bg-gray-100 w-90 rounded-md mx-auto py-3'>
-        <p className='text-xs pl-3'>Cantidad: <b>1</b> <span className='ml-6 text-gray-500'>(23 disponibles)</span></p>
+        <p className='text-xs pl-3'>Cantidad: <b>1</b> <span className='ml-6 text-gray-500'>({detalle?.sold.quantity} disponibles)</span></p>
       </div>
       <div className='mt-3'>
         <button className='block w-90  mx-auto py-3 text-center bg-blue-500 text-white text-md font-normal rounded-md'>Comprar ahora</button>
@@ -96,5 +98,7 @@ export default function Detalles() {
 
       </div>
       </div>
+      <BarraInferior/>
+      </>
   )
 }

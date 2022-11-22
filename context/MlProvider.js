@@ -41,7 +41,7 @@ const MlProvider = ({children}) => {
         router.push('/detalles')
      }
      const obtenerOfertaSugeridos = async () =>{
-        const  {data}  = await axios('https://api.mercadolibre.com/sites/MLA/search?q=iphone12&limit=10')
+        const  {data}  = await axios('https://api.mercadolibre.com/sites/MLA/search?q=iphone12&limit=6')
         setSugeridos(data.results)
     }
  
