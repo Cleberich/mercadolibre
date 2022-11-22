@@ -1,5 +1,5 @@
-export const formatearDinero = cantidad =>{
-    return cantidad.toLocaleString('es-UY',{
+export const formatearDinero = importe =>{
+    return importe.toLocaleString('es-UY',{
         style:'currency',
         currency: 'UYU'
     })
