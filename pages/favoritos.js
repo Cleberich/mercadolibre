@@ -8,7 +8,7 @@ export default function favoritos() {
     const [favoritos,setFavoritos] = useState([])
     
     const obtenerFavoritos = async () =>{
-        const  {data}  = await axios('https://api.mercadolibre.com/sites/MLU/search?q=macbook-pro&limit=3')
+        const  {data}  = await axios('https://api.mercadolibre.com/sites/MLU/search?q=macbook-pro&limit=2')
         setFavoritos(data.results)
     }
     useEffect(()=>{
@@ -32,7 +32,7 @@ export default function favoritos() {
             </svg>
         </button>
     </div>
-    <div>
+    <div className='bg-white'>
     {favoritos.map(favorito => (
        <ProductosFavoritos
        key={favorito.id}

@@ -2,81 +2,67 @@ import axios from "axios"
 import { useEffect, useState } from "react";
 import Card from "./Card";
 import CardOferta from "./CardOferta";
-import CardProductos from "./CardProductos"
+import CardProductos from './CardProductos'
+import useMl from "../hooks/useMl";
 
 const ContenedorProductos = () => {
-   const [iphone, setIphone] = useState([])
-   const [oferta, setOferta] = useState([])
-   const [vistas, setVistas] = useState([])
-   const [paginaLista, setPaginaLista] = useState(false)
-    const obtenerIphone = async () =>{
-        const  {data}  = await axios('https://api.mercadolibre.com/sites/MLA/search?q=categories&limit=1')
-       setIphone(data.results)
-    }
-    const obtenerOferta = async () =>{
-        const  {data}  = await axios('https://api.mercadolibre.com/sites/MLA/search?q=iphone&limit=1')
-        setOferta(data.results)
-    }
-    const obtenerProductos = async () =>{
-        const  {data}  = await axios('https://api.mercadolibre.com/sites/MLA/search?q=electronica&limit=20')
-        setVistas(data.results)
-    }
-
-    useEffect(()=>{
-        obtenerIphone()
-        obtenerOferta()
-        obtenerProductos()
-        setPaginaLista(true)
-    }, [])
+  const {iphone, oferta, vistas, paginaLista, spinner} = useMl()
    
    
-  return (
-    <div className="w-95 mx-auto mt-4 rounded-md">
-        <div className="bg-white w-95 mx-auto ">
-        <h2 className="ml-5">Visto recientemente</h2>
-        <hr></hr>
-        </div>
-      {paginaLista ? iphone.map(celu => (
-       <Card
-       key={celu.id}
-       celu={celu}
-       />
-       )): ''}
-        <div className="bg-white -mt-4 rounded-md">
-          <hr></hr>
-           <div  className="flex justify-between">
-              <h2 className="ml-5 text-blue-600 font-normal xs-1 py-1">Ver historial de navegación</h2>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 my-auto mr-1 text-blue-600 h-4">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                </svg>
-           </div>
-        </div>
-        <div className="bg-white mt-3 w-95 rounded-md mx-auto">
-        <h2 className="ml-5">Oferta del día</h2>
-        <hr></hr>
-        </div>
-        <div className="">
-        {paginaLista ? oferta.map(ofer => (
-       <CardOferta
-       key={ofer.id}
-       ofer={ofer}
-       />
-       )): ''}
-        </div>
-        <div className="bg-white mt-3 w-95 rounded-md mx-auto">
-        <h2 className="mx-5 py-2">Relacionado con tus visitas en Electrónica, Audio y Video</h2>
-        <hr></hr>
-        </div>
-        <div className="">
-        {paginaLista ? vistas.map(prod => (
-       <CardProductos
-       key={prod.id}
-       prod={prod}
-       />
-       )): ''}
-        </div>
-        
-    </div>
+  return (  
+      <div className="w-95 mx-auto mt-4 rounded-md">
+      <div className="bg-white w-95 mx-auto ">
+      <h2 className="ml-5">Visto recientemente</h2>
+      <hr></hr>
+      </div>
+    {spinner == false ? iphone.map(celu => (
+      <Card
+      key={celu.id}
+     celu={celu}
+     />
+     )): (
+      <div className='bg-white absolute top-0 w-full h-screen ' role="status">
+      <svg aria-hidden="true" className=" w-8 h-8 mt-44 mx-auto text-gray-200 animate-spin dark:text-gray-600 fill-gray-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
+        <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/>
+      </svg>
+      </div>
+     )}
+     <div className="bg-white -mt-4 w-95 mx-auto rounded-md">
+     <hr></hr>
+         <div  className="flex justify-between w-95 mx-auto">
+            <h2 className="ml-5 text-blue-600 font-normal xs-1 py-1">Ver historial de navegación</h2>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 my-auto mr-1 text-blue-600 h-4">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+         </div>
+      </div>
+      <div className="bg-white mt-3 w-95 rounded-md mx-auto">
+      <h2 className="ml-5">Oferta del día</h2>
+      <hr></hr>
+      </div>
+      <div className="">
+      {spinner == false ? oferta.map(ofer => (
+     <CardOferta
+     key={ofer.id}
+     ofer={ofer}
+     />
+     )): ''}
+      </div>
+      <div className="bg-white mt-3 w-95 rounded-md mx-auto">
+      <h2 className="mx-5 py-2">Relacionado con tus visitas en Electrónica, Audio y Video</h2>
+      <hr></hr>
+      </div>
+      <div className="">
+      {paginaLista ? vistas.map(prod => (
+        <CardProductos
+     key={prod.id}
+     prod={prod}
+     />
+     )): ''}
+      </div>
+      
+  </div>  
   )
 }
 

@@ -7,6 +7,7 @@ import ImagenAnuncio from '../components/ImagenAnuncio'
 import ContenedorProductos from '../components/ContenedorProductos'
 import Categorias from '../components/Categorias'
 
+
 export default function Home() {
   return (
     <>

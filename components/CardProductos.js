@@ -1,16 +1,16 @@
 import React from 'react'
 import Image from 'next/image'
-import { useEffect, useState } from "react";
 import {formatearDinero} from '../helpers'
+import useMl from '../hooks/useMl'
 
 const CardProductos = ({prod}) => {
     
     const { title, price, thumbnail, id} = prod
-
+    const {verDetallesVistas} = useMl()
    
   return (
     <>
-  <div className='flex w-95 mx-auto p-3 bg-white mb-3 rounded-md'>
+  <div className='flex w-95 mx-auto p-3 bg-white mb-3 rounded-md' onClick={()=>verDetallesVistas(id)}>
      <div className='w-2/6'>
         <img className=""src={thumbnail}/>
      </div>

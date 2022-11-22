@@ -41,3 +41,30 @@
     width: 97%;
    
 }
+.detalle{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 60px;
+    margin-left:-5px;
+    padding: 20px;
+}
+.xxs {
+    font-size: 6px
+}
+.w-90{
+    width: 94%;
+}
+
+.carrusel{
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+.card{
+    max-width: 270px;
+    min-width: 250px;
+    height: 320px;
+    padding: 1rem;
+
+}
