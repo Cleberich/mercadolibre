@@ -11,7 +11,7 @@ export default function Detalles() {
 
   return (
 <>
-    <div className='bg-white h-screen'>
+    <div className='bg-white h-screen pb-44'>
     <div className='bg-amarillo py-4 flex justify-between sticky top-0'>
       <div>
         <button type='button' className='ml-2' onClick={()=>router.push('/')}>
