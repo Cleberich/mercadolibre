@@ -69,3 +69,7 @@
     margin-bottom: 80px;
 
 }
+.busqueda{
+    display: grid;
+    grid-template-columns: 1fr 7fr 1fr;
+}

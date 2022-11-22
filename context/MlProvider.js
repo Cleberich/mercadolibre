@@ -12,7 +12,11 @@ const MlProvider = ({children}) => {
     const [spinner, setSpinner] = useState(true)
     const [detalle, setDetalle] = useState({})
     const [sugeridos, setSugeridos] = useState([])
+    const [cajaBusqueda, setCajaBusqueda] = useState(false)
+    const [resultados, setResultados] = useState([])
+    const [datos, setDatos] = useState('celulares')
     const router = useRouter()
+
      const obtenerIphone = async () =>{
          const  {data}  = await axios('https://api.mercadolibre.com/sites/MLA/search?q=categories&limit=1')
         setIphone(data.results)
@@ -44,7 +48,19 @@ const MlProvider = ({children}) => {
         const  {data}  = await axios('https://api.mercadolibre.com/sites/MLA/search?q=iphone12&limit=6')
         setSugeridos(data.results)
     }
- 
+    const handleBusqueda = async () =>{
+        const  {data}  = await axios(`https://api.mercadolibre.com/sites/MLA/search?q=${datos}&limit=12`)
+        setResultados(data.results)
+    }
+    const abrirBusqueda = () =>{
+        setCajaBusqueda(true)
+        router.push('/busqueda')
+    }
+    const cerrarBusqueda = () =>{
+        setCajaBusqueda(false)
+        router.push('/')
+    }
+ console.log(datos);
 
      useEffect(()=>{
          obtenerIphone()
@@ -52,8 +68,9 @@ const MlProvider = ({children}) => {
          obtenerProductos()
          obtenerOfertaSugeridos()
          setPaginaLista(true)
+         handleBusqueda()
          setSpinner(false)
-     }, [])
+     }, [datos])
   return (
     <MlContext.Provider
     value={{
@@ -65,8 +82,12 @@ const MlProvider = ({children}) => {
         verDetallesGeneral,
         verDetallesVistas,
         verDetallesOferta,
+        abrirBusqueda,
+        cerrarBusqueda,
         sugeridos,
-        detalle
+        detalle,
+        resultados,
+        setDatos
     }}>
         {children}
     </MlContext.Provider>
