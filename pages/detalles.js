@@ -7,7 +7,7 @@ import Sugeridos from '../components/Sugeridos';
 export default function Detalles() {
   const router = useRouter()
   const { detalle, sugeridos } = useMl()
-
+  const { price } = detalle
 
   return (
     <div className='bg-white h-screen'>
@@ -49,7 +49,7 @@ export default function Detalles() {
       </div>
       <div className="pl-3">
       <p className='line-through xs-1 text-gray-500'>${detalle?.price * 1.12}</p>
-      <p className='text-2xl my-auto'>${ detalle?.price} <span className='text-verde font-bold text-sm pb-1'>12% OFF</span></p>
+      <p className='text-2xl my-auto'>${{formatearDinero(price)}} <span className='text-verde font-bold text-sm pb-1'>12% OFF</span></p>
       <p className='text-md'>en <span className='text-verde'>12 x ${detalle?.price/12} sin interés</span></p>
       <p className='xs-1 text-blue-600 mt-1'>Ver todos los medios de pago</p>
       <p className='bg-blue-500 rounded-sm w-20 mt-1 pl-1 xs text-white font-bold uppercase'>Oferta del día</p>
