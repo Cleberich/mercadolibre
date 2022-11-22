@@ -1,6 +1,9 @@
 import { useRouter } from "next/router"
+import useMl from "../hooks/useMl"
+
 const BarraInferior = () => {
     const router = useRouter()
+    const { notificacion } = useMl()
   return (
     <>
     <div className="flex justify-between  w-full px-7 py-2 bg-white fixed bottom-0 border-t-2">
@@ -36,7 +39,10 @@ const BarraInferior = () => {
             <path strokeLinecap="round" strokeLinejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
             </svg>
             <button className="xs text-center ml-1">Notificaciones</button>
-            <div className="fixed bottom-11 right-20 bg-red-500 rounded-full text-white w-5 h-5 "><p className="xs-1 my-auto">1</p></div>
+            {notificacion.length > 0 ? (
+                <div className="fixed bottom-11 right-20 bg-red-500 rounded-full text-white w-5 h-5 "><p className="xs-1 my-auto">{notificacion.length}</p></div>
+            ): ''
+            }
         </div>
         <div onClick={() => {
             router.push('/mas')}} 

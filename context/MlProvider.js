@@ -15,6 +15,13 @@ const MlProvider = ({children}) => {
     const [cajaBusqueda, setCajaBusqueda] = useState(false)
     const [resultados, setResultados] = useState([])
     const [datos, setDatos] = useState('celulares')
+    const [notificacion, setNotificacion] = useState([{
+        agradecimiento: 'Hola Gracias por visitar mi web app', 
+        nombre: 'Cleber Dávila',
+        profesion: 'Front-end Developer',
+        sigueme: '',
+        id: 1
+      }])
     const router = useRouter()
 
      const obtenerIphone = async () =>{
@@ -44,6 +51,11 @@ const MlProvider = ({children}) => {
         setDetalle(vistaDetalle[0])
         router.push('/detalles')
      }
+     const verDetalleResultados = (id) =>{
+        const vistaDetalle = resultados.filter(prod => prod.id == id)
+        setDetalle(vistaDetalle[0])
+        router.push('/detalles')
+     }
      const obtenerOfertaSugeridos = async () =>{
         const  {data}  = await axios('https://api.mercadolibre.com/sites/MLA/search?q=iphone12&limit=6')
         setSugeridos(data.results)
@@ -60,7 +72,10 @@ const MlProvider = ({children}) => {
         setCajaBusqueda(false)
         router.push('/')
     }
- console.log(datos);
+    const eliminarNotificacion = (id)=>{
+        const notificacionesActualizadas = notificacion.filter(noti => noti.id !== id)
+        setNotificacion(notificacionesActualizadas)
+    }
 
      useEffect(()=>{
          obtenerIphone()
@@ -82,12 +97,15 @@ const MlProvider = ({children}) => {
         verDetallesGeneral,
         verDetallesVistas,
         verDetallesOferta,
+        verDetalleResultados,
+        eliminarNotificacion,
         abrirBusqueda,
         cerrarBusqueda,
         sugeridos,
         detalle,
         resultados,
-        setDatos
+        setDatos,
+        notificacion
     }}>
         {children}
     </MlContext.Provider>
