@@ -70,7 +70,7 @@ export default function Detalles() {
         <p className='xs-1 text-gray-600 ml-11 -mt-1'>Tienes 30 días desde que lo recibes</p>
       <h2 className='pl-3 text-sm my-3 text-bold'>Stock disponible</h2>
       <div className='bg-gray-100 w-90 rounded-md mx-auto py-3'>
-        <p className='text-xs pl-3'>Cantidad: <b>1</b> <span className='ml-6 text-gray-500'>({detalle?.installments.quantity} disponibles)</span></p>
+        <p className='text-xs pl-3'>Cantidad: <b>1</b> <span className='ml-6 text-gray-500'>(23 disponibles)</span></p>
       </div>
       <div className='mt-3'>
         <button className='block w-90  mx-auto py-3 text-center bg-blue-500 text-white text-md font-normal rounded-md'>Comprar ahora</button>
