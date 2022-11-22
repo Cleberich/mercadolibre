@@ -8,6 +8,7 @@ const MlProvider = ({children}) => {
     const [iphone, setIphone] = useState([])
     const [oferta, setOferta] = useState([])
     const [vistas, setVistas] = useState([])
+    const [ubicacion, setUbicacion] = useState('Prado')
     const [paginaLista, setPaginaLista] = useState(false)
     const [spinner, setSpinner] = useState(true)
     const [detalle, setDetalle] = useState({})
@@ -22,6 +23,7 @@ const MlProvider = ({children}) => {
         sigueme: '',
         id: 1
       }])
+  
     const router = useRouter()
 
      const obtenerIphone = async () =>{
@@ -81,15 +83,21 @@ const MlProvider = ({children}) => {
         const notificacionesActualizadas = notificacion.filter(noti => noti.id !== id)
         setNotificacion(notificacionesActualizadas)
     }
-console.log(oferta);
+    const obtenerUbicacion = (e) =>{
+        e.preventDefault()
+        router.push('/')
+    }
+
      useEffect(()=>{
-         obtenerIphone()
+         setTimeout(()=>{
+        obtenerIphone()
          obtenerOferta()
          obtenerProductos()
          obtenerOfertaSugeridos()
          setPaginaLista(true)
          handleBusqueda()
          setSpinner(false)
+         },1000)
      }, [datos])
   return (
     <MlContext.Provider
@@ -99,6 +107,7 @@ console.log(oferta);
         vistas,
         paginaLista,
         spinner,
+        setSpinner,
         verDetallesGeneral,
         verDetallesVistas,
         verDetallesOferta,
@@ -111,7 +120,10 @@ console.log(oferta);
         detalle,
         resultados,
         setDatos,
-        notificacion
+        notificacion,
+        obtenerUbicacion,
+        ubicacion,
+        setUbicacion
     }}>
         {children}
     </MlContext.Provider>

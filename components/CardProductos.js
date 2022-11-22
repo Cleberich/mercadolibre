@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import {formatearDinero} from '../helpers'
+import {formatearDinero, formatearDineroUSD} from '../helpers'
 import useMl from '../hooks/useMl'
 
 const CardProductos = ({prod}) => {
@@ -16,8 +16,8 @@ const CardProductos = ({prod}) => {
      </div>
     <div className='w-2/4 block'>
         <h1 className='text-sm'>{title}</h1>
-        <p>{formatearDinero(price)}</p>
-        <p className='text-verde text-xs'>10 x {formatearDinero(price/10)} sin interés</p>
+        <p>{prod.currency_id == 'UYU' ? formatearDinero(price):formatearDineroUSD(price)}</p>
+        <p className='text-verde text-xs'>10 x {prod.currency_id == 'UYU' ? formatearDinero(price/10):formatearDineroUSD(price/10)} sin interés</p>
         <p className='text-verde text-xs font-bold'>Envío gratis</p>
     </div>
    </div>
