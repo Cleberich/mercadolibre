@@ -27,7 +27,7 @@ const MlProvider = ({children}) => {
      }
      const verDetallesGeneral = (id) =>{
         const vistaDetalle = iphone.filter(prod => prod.id == id)
-        setDetalle(vistaDetalle)
+        setDetalle(vistaDetalle[0])
         router.push('/detalles')
      }
      const verDetallesVistas = (id) =>{
