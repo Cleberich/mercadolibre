@@ -20,7 +20,7 @@ export default function Home() {
       </svg>
   </div>
     ):(
-      <main className='mobile bg-amarillo'>
+      <main className=' bg-amarillo'>
       <Layout
       title={'MercadoLibre - Inicio'}
       >
