@@ -8,9 +8,7 @@ export default function Detalles() {
   const router = useRouter()
   const { detalle, sugeridos } = useMl()
   const {title, id, thumbnail,price} = detalle[0]
-  console.log(detalle[0].condition);
- 
-  console.log(detalle);
+
   return (
     <div className='bg-white h-screen'>
     <div className='bg-amarillo py-4 flex justify-between'>
@@ -40,8 +38,8 @@ export default function Detalles() {
       </div>
     </div>
     <div className='flex pt-3'>
-    <p className='xs-1  ml-2 px-1 capitalize'>{detalle[0].condition} |</p>
-    <p className='xs-1 mr-2'>{detalle[0].available_quantity} vendidos</p>
+    <p className='xs-1  ml-2 px-1 capitalize'>{detalle?.condition} |</p>
+    <p className='xs-1 mr-2'>{detalle?.available_quantity} vendidos</p>
     </div>
       <div className=''>
         <h1 className='p-3 font-light'>{title}</h1>
