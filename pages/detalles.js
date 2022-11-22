@@ -48,9 +48,9 @@ export default function Detalles() {
         <img className="w-80 mx-auto" src={detalle?.thumbnail} alt={detalle?.title}/>
       </div>
       <div className="pl-3">
-      <p className='line-through xs-1 text-gray-500'>{formatearDinero(detalle ? detalle.price * 1.12 : 23)}</p>
-      <p className='text-2xl my-auto'>{formatearDinero(detalle ? detalle.price : 23)} <span className='text-verde font-bold text-sm pb-1'>12% OFF</span></p>
-      <p className='text-md'>en <span className='text-verde'>12 x {formatearDinero(detalle ? detalle.price/12 : 23)} sin interés</span></p>
+      <p className='line-through xs-1 text-gray-500'>{formatearDinero(detalle ? detalle.price * 1.12 : '23')}</p>
+      <p className='text-2xl my-auto'>{formatearDinero(detalle ? detalle.price : '23')} <span className='text-verde font-bold text-sm pb-1'>12% OFF</span></p>
+      <p className='text-md'>en <span className='text-verde'>12 x {formatearDinero(detalle ? detalle.price/12 : '23')} sin interés</span></p>
       <p className='xs-1 text-blue-600 mt-1'>Ver todos los medios de pago</p>
       <p className='bg-blue-500 rounded-sm w-20 mt-1 pl-1 xs text-white font-bold uppercase'>Oferta del día</p>
       </div>
