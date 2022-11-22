@@ -57,8 +57,8 @@ export default function Detalles() {
       </div>
       <div className="pl-3">
       <p className='line-through text-sm text-gray-500'>{paginaLista ? formatearDinero(detalle.price * 1.28) : 'cargando'}</p>
-      <p className='text-3xl my-auto'>{ formatearDinero(detalle ? 200 : detalle?.price)} <span className='text-verde font-bold text-sm pb-1'>28% OFF</span></p>
-      <p className='text-md'>en <span className='text-verde my-auto'>10 x {formatearDinero(detalle ? 220 :detalle?.price/10)} sin interés</span></p>
+      <p className='text-3xl my-auto'>{paginaLista ? formatearDinero(detalle?.price)  : 'cargando'} <span className='text-verde font-bold text-sm pb-1'>28% OFF</span></p>
+      <p className='text-md'>en <span className='text-verde my-auto'>12 x {paginaLista ? formatearDinero(detalle?.price/12) : 'cargando'} sin interés</span></p>
       <p className='xs-1 text-blue-600 mt-1'>Ver todos los medios de pago</p>
       <p className='bg-blue-500 rounded-sm w-20 mt-1 pl-1 xs text-white font-bold uppercase'>Oferta del día</p>
       </div>
@@ -76,7 +76,7 @@ export default function Detalles() {
 
       </div>
         <p className='xs-1 text-gray-600 ml-11 -mt-1'>Tienes 30 días desde que lo recibes</p>
-      <h2 className='pl-3 text-sm my-5 text-bold'>Stock disponible</h2>
+      <h2 className='pl-3 text-sm my-5 text-bold'>{detalle?.sold_quantity != 0 ? 'Stock disponible' : 'Producto fuera de stock'}</h2>
       <div className='bg-gray-100 w-90 rounded-md mx-auto py-3 mb-3'>
         <p className='text-xs pl-3'>Cantidad: <b>1</b> <span className='ml-6 text-gray-500'>({detalle?.sold_quantity} disponibles)</span></p>
       </div>
@@ -106,7 +106,6 @@ export default function Detalles() {
       </div>
 </div>
       </main>
-      <div className='py-20 text-white'> <h2>MercadoLibre</h2> </div>
       <BarraInferior/>
       </>
   )
