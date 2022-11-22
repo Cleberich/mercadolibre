@@ -12,7 +12,7 @@ const CardProductos = ({prod}) => {
     <>
   <div className='flex w-95 mx-auto p-3 bg-white mb-3 rounded-md' onClick={()=>verDetallesVistas(id)}>
      <div className='w-2/6'>
-        <img className=""src={thumbnail}/>
+        <img className="w-full" alt={`producto ${title}`}src={thumbnail}/>
      </div>
     <div className='w-2/4 block'>
         <h1 className='text-sm'>{title}</h1>
