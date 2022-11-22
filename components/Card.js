@@ -1,5 +1,3 @@
-import Image from 'next/image'
-import { useEffect, useState } from "react";
 import {formatearDinero, formatearDineroUSD} from '../helpers'
 import useMl from '../hooks/useMl';
 
@@ -12,13 +10,13 @@ const Card = ({celu}) => {
     <>
   <div className='flex w-95 mx-auto p-3 bg-white mb- rounded-md' onClick={()=>verDetallesGeneral(id)}>
      <div className='w-2/6'>
-        <Image width={200} height={200} alt={title} className=""src={thumbnail}/>
+        <img width={200} height={200} alt={`producto ${title}`} className=""src={thumbnail}/>
      </div>
     <div className='w-2/4 block'>
         <h1 className='text-sm'>{title}</h1>
         <p>{celu.currency_id == 'UYU' ? formatearDinero(price):formatearDineroUSD(price)}</p>
-        <p className='text-verde text-xs'>10 x {celu.currency_id == 'UYU' ? formatearDinero(price/10):formatearDineroUSD(price/10)} sin interés</p>
-        <p className='text-verde text-xs font-bold mb-3'>Envío gratis</p>
+        <p className='text-verde xs-1'>10 x {celu.currency_id == 'UYU' ? formatearDinero(price/10):formatearDineroUSD(price/10)} sin interés</p>
+        <p className='text-verde xs-1 font-bold mb-3'>Envío gratis</p>
     </div>
    </div>
 
