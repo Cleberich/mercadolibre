@@ -5,6 +5,7 @@ const Portada = () => {
     <div>
         <Image 
         src='/img/banner.jpeg'
+        className="w-full"
         alt='banner'
         width={400}
         height={200}

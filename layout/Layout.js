@@ -6,10 +6,11 @@ export default function Layout({children}) {
   return (
     <>
         <Head>
+            <meta charset="utf-8"/>
             <title>Mercado Libre</title>
-
+            <meta name="description" content="En MercadoLibre encontras todo lo que buscas, articulos de hogar, jardin, electrodomesticos,celulares, electronica, tecnologia, indumentaria y más"/>
         </Head>
-        <body className="bg-gris">
+        <body className="bg-amarillo">
             <Header/>
             {children}
             <BarraInferior/>

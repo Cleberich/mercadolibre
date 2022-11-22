@@ -10,7 +10,8 @@ const ContenedorProductos = () => {
    
    
   return (  
-      <div className="w-95 mx-auto mt-4 rounded-md">
+     <main className="bg-gris py-1">
+         <div className="w-95 mx-auto mt-4 rounded-md">
       <div className="bg-white w-95 mx-auto ">
       <h2 className="ml-5">Visto recientemente</h2>
       <hr></hr>
@@ -63,6 +64,7 @@ const ContenedorProductos = () => {
       </div>
       
   </div>  
+     </main>
   )
 }
 

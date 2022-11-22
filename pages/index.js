@@ -11,7 +11,9 @@ import Categorias from '../components/Categorias'
 export default function Home() {
   return (
     <>
-      <Layout>
+      <Layout
+      title={'MercadoLibre - Inicio'}
+      >
         <Portada/>
         <Anuncio/>
         <Categorias/>
