@@ -49,9 +49,9 @@ export default function Detalles() {
         <img className="w-80 mx-auto" src={detalle?.thumbnail} alt={detalle?.title}/>
       </div>
       <div className="pl-3">
-      <p className='line-through xs-1 text-gray-500'>${detalle?.price * 1.12}</p>
+      <p className='line-through xs-1 text-gray-500'>${formatearDinero ? 213 :(detalle?.price * 1.12)}</p>
       <p className='text-2xl my-auto'>${ formatearDinero(detalle ? 200 : detalle?.price)} <span className='text-verde font-bold text-sm pb-1'>12% OFF</span></p>
-      <p className='text-md'>en <span className='text-verde'>10 x ${detalle?.price/10} sin interés</span></p>
+      <p className='text-md'>en <span className='text-verde'>10 x ${formatearDinero ? 123 :(detalle?.price/10)} sin interés</span></p>
       <p className='xs-1 text-blue-600 mt-1'>Ver todos los medios de pago</p>
       <p className='bg-blue-500 rounded-sm w-20 mt-1 pl-1 xs text-white font-bold uppercase'>Oferta del día</p>
       </div>
@@ -71,7 +71,7 @@ export default function Detalles() {
         <p className='xs-1 text-gray-600 ml-11 -mt-1'>Tienes 30 días desde que lo recibes</p>
       <h2 className='pl-3 text-sm my-3 text-bold'>Stock disponible</h2>
       <div className='bg-gray-100 w-90 rounded-md mx-auto py-3'>
-        <p className='text-xs pl-3'>Cantidad: <b>1</b> <span className='ml-6 text-gray-500'>({detalle?.sold.quantity} disponibles)</span></p>
+        <p className='text-xs pl-3'>Cantidad: <b>1</b> <span className='ml-6 text-gray-500'>({detalle?.sold_quantity} disponibles)</span></p>
       </div>
       <div className='mt-3'>
         <button className='block w-90  mx-auto py-3 text-center bg-blue-500 text-white text-md font-normal rounded-md'>Comprar ahora</button>
