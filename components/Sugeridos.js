@@ -4,9 +4,9 @@ import useMl from "../hooks/useMl"
 const Sugeridos = ({sugerido}) => {
 
     const {title, price, thumbnail, id} = sugerido
-    const {verDetallesOferta} = useMl()
+
   return (
-    <div className="bg-white pl-3 card shadow-2xl m-2 rounded-md"  onClick={()=>verDetallesOferta(id)}>
+    <div className="bg-white pl-3 card shadow-2xl m-2 rounded-md"  >
         <div>
             <img className="w-72 mx-auto p-3" alt={title} src={thumbnail}/>
         </div>
