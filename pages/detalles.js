@@ -5,9 +5,10 @@ import { formatearDinero } from '../helpers/'
 import useMl from '../hooks/useMl'
 import Sugeridos from '../components/Sugeridos';
 import BarraInferior from '../components/BarraInferior'
+
 export default function Detalles() {
   const router = useRouter()
-  const { detalle, sugeridos } = useMl()
+  const { detalle, sugeridos, paginaLista } = useMl()
   console.log(detalle);
 
   return (
@@ -16,7 +17,7 @@ export default function Detalles() {
       <title>{`MercadoLibre - ${detalle.title}`}</title>
       <meta name='description' content={`Producto ${detalle.title}`}/>
     </Head>
-    <main className='bg-white h-screen'>
+    <main className='bg-amarillo h-screen'>
     <div className='bg-amarillo py-4 flex justify-between sticky top-0'>
       <div>
         <button type='button' className='ml-2' onClick={()=>router.push('/')}>
@@ -43,6 +44,7 @@ export default function Detalles() {
          </button>
       </div>
     </div>
+    <div className='bg-white'>
     <div className='flex pt-3'>
     <p className='xs-1  ml-2 px-1 capitalize'>{detalle?.condition} |</p>
     <p className='xs-1 mr-2'>{detalle?.available_quantity} vendidos</p>
@@ -54,9 +56,9 @@ export default function Detalles() {
         <img className="w-80 mx-auto" src={detalle?.thumbnail} alt={detalle?.title}/>
       </div>
       <div className="pl-3">
-      <p className='line-through text-sm text-gray-500'>{formatearDinero (detalle == undefined ? 213 : detalle?.price * 1.28)}</p>
-      <p className='text-3xl my-auto'>{ formatearDinero(detalle == undefined ? 200 : detalle?.price)} <span className='text-verde font-bold text-sm pb-1'>28% OFF</span></p>
-      <p className='text-md'>en <span className='text-verde my-auto'>10 x {formatearDinero(detalle == undefined ? 220 :detalle?.price/10)} sin interés</span></p>
+      <p className='line-through text-sm text-gray-500'>{paginaLista ? formatearDinero(detalle.price * 1.28) : 'cargando'}</p>
+      <p className='text-3xl my-auto'>{ formatearDinero(detalle ? 200 : detalle?.price)} <span className='text-verde font-bold text-sm pb-1'>28% OFF</span></p>
+      <p className='text-md'>en <span className='text-verde my-auto'>10 x {formatearDinero(detalle ? 220 :detalle?.price/10)} sin interés</span></p>
       <p className='xs-1 text-blue-600 mt-1'>Ver todos los medios de pago</p>
       <p className='bg-blue-500 rounded-sm w-20 mt-1 pl-1 xs text-white font-bold uppercase'>Oferta del día</p>
       </div>
@@ -82,7 +84,7 @@ export default function Detalles() {
         <button className='block w-90  mx-auto py-3 text-center bg-blue-500 text-white text-md font-normal rounded-md'>Comprar ahora</button>
         <button className='block w-90  mx-auto py-3 text-center bg-blue-100 text-blue-500 text-md font-normal rounded-md mt-2'>Agregar al carrito</button>
       </div>
-      <div className='flex pl-3 py-3 my-3 bg-red-200'>
+      <div className='flex pl-3 py-3 my-3 bg-white'>
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
         </svg>
@@ -102,6 +104,7 @@ export default function Detalles() {
       }
 
       </div>
+</div>
       </main>
       <div className='py-20 text-white'> <h2>MercadoLibre</h2> </div>
       <BarraInferior/>
