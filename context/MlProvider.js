@@ -35,7 +35,7 @@ const MlProvider = ({children}) => {
          setOferta(data.results)
      }
      const obtenerProductos = async () =>{
-         const  {data}  = await axios('https://api.mercadolibre.com/sites/MLU/search?q=electronica&limit=20')
+         const  {data}  = await axios('https://api.mercadolibre.com/sites/MLU/search?q=electronica&limit=12')
          setVistas(data.results)
      }
      const verDetallesGeneral = (id) =>{
@@ -68,7 +68,7 @@ const MlProvider = ({children}) => {
         setSugeridos(data.results)
     }
     const handleBusqueda = async () =>{
-        const  {data}  = await axios(`https://api.mercadolibre.com/sites/MLU/search?q=${datos}&limit=12`)
+        const  {data}  = await axios(`https://api.mercadolibre.com/sites/MLU/search?q=${datos}&limit=10`)
         setResultados(data.results)
     }
     const abrirBusqueda = () =>{
