@@ -12,7 +12,7 @@ const CardOferta = ({ofer}) => {
     <>
   <div className='block w-95 mx-auto p-3  bg-white mb-3 rounded-md'  onClick={()=>verDetallesOferta(id)}>
      <div className='w-6/6 mx-auto'>
-        <img className="w-64 mx-auto" src={thumbnail}/>
+        <img className="w-64 mx-auto" alt={`producto ${title}`}src={thumbnail}/>
      </div>
     <div className='w-4/4 block'>
         <h1 className='text-sm'>{title}</h1>
