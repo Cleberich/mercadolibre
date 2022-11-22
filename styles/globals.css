@@ -73,3 +73,6 @@
     display: grid;
     grid-template-columns: 1fr 7fr 1fr;
 }
+.input::-moz-focus-inner{
+    
+}

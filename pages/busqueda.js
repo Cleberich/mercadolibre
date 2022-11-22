@@ -14,7 +14,7 @@ export default function Busqueda() {
         </svg>  
         <input 
         type='text'
-        className='mr-3 ml-3 w-full rounded-2xl py-1 pl-8'
+        className='mr-3 ml-3 w-full rounded-2xl py-1 pl-8 input'
         placeholder='Buscar en Mercado Libre'
         autofocus="autofocus"
         onChange={e => setDatos(e.target.value)}
