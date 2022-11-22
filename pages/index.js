@@ -20,7 +20,7 @@ export default function Home() {
       </svg>
   </div>
     ):(
-      
+      <main className='mobile'>
       <Layout
       title={'MercadoLibre - Inicio'}
       >
@@ -30,7 +30,11 @@ export default function Home() {
         <ImagenAnuncio/>
         <ContenedorProductos/>
       </Layout>
+        </main>
     )}
+        <div className='text-center py-64 px-24 text-3xl font-bold informativo'>
+          <h2>Para garantizar una buena experiencia de usuario probando el clon de la App de MercadoLibre te recomendamos visitar la web desde un dispositivo movil</h2>
+        </div>
     </>
   )
 }
