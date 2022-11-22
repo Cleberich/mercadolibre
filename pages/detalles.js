@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React from 'react'
 import { formatearDinero } from '../helpers/'
+import { formatearDineroUSD } from '../helpers/'
 import useMl from '../hooks/useMl'
 import Sugeridos from '../components/Sugeridos';
 import BarraInferior from '../components/BarraInferior'
@@ -9,7 +10,7 @@ import BarraInferior from '../components/BarraInferior'
 export default function Detalles() {
   const router = useRouter()
   const { detalle, sugeridos, paginaLista } = useMl()
-  console.log(detalle);
+  console.log(detalle.currency_id);
 
   return (
 <>
@@ -57,7 +58,7 @@ export default function Detalles() {
       </div>
       <div className="pl-3">
       <p className='line-through text-sm text-gray-500'>{paginaLista ? formatearDinero(detalle.price * 1.28) : 'cargando'}</p>
-      <p className='text-3xl my-auto'>{paginaLista ? formatearDinero(detalle?.price)  : 'cargando'} <span className='text-verde font-bold text-sm pb-1'>28% OFF</span></p>
+      <p className='text-3xl my-auto'>{detalle.currency_id == 'UYU' ? formatearDinero(detalle?.price)  : formatearDineroUSD(detalle?.price) } <span className='text-verde font-bold text-sm pb-1'>28% OFF</span></p>
       <p className='text-md'>en <span className='text-verde my-auto'>12 x {paginaLista ? formatearDinero(detalle?.price/12) : 'cargando'} sin interés</span></p>
       <p className='xs-1 text-blue-600 mt-1'>Ver todos los medios de pago</p>
       <p className='bg-blue-500 rounded-sm w-20 mt-1 pl-1 xs text-white font-bold uppercase'>Oferta del día</p>

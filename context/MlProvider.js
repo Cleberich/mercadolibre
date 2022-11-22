@@ -25,15 +25,15 @@ const MlProvider = ({children}) => {
     const router = useRouter()
 
      const obtenerIphone = async () =>{
-         const  {data}  = await axios('https://api.mercadolibre.com/sites/MLA/search?q=categories&limit=1')
+         const  {data}  = await axios('https://api.mercadolibre.com/sites/MLU/search?q=categories&limit=1')
         setIphone(data.results)
      }
      const obtenerOferta = async () =>{
-         const  {data}  = await axios('https://api.mercadolibre.com/sites/MLA/search?q=iphone12&limit=1')
+         const  {data}  = await axios('https://api.mercadolibre.com/sites/MLU/search?q=iphone12&limit=1')
          setOferta(data.results)
      }
      const obtenerProductos = async () =>{
-         const  {data}  = await axios('https://api.mercadolibre.com/sites/MLA/search?q=electronica&limit=20')
+         const  {data}  = await axios('https://api.mercadolibre.com/sites/MLU/search?q=electronica&limit=20')
          setVistas(data.results)
      }
      const verDetallesGeneral = (id) =>{
@@ -56,12 +56,17 @@ const MlProvider = ({children}) => {
         setDetalle(vistaDetalle[0])
         router.push('/detalles')
      }
+     const verDetallesSugeridos = (id) =>{
+        const vistaDetalle = sugeridos.filter(prod => prod.id == id)
+        setDetalle(vistaDetalle[0])
+        router.push('/detalles')
+     }
      const obtenerOfertaSugeridos = async () =>{
-        const  {data}  = await axios('https://api.mercadolibre.com/sites/MLA/search?q=iphone12&limit=6')
+        const  {data}  = await axios('https://api.mercadolibre.com/sites/MLU/search?q=iphone12&limit=6')
         setSugeridos(data.results)
     }
     const handleBusqueda = async () =>{
-        const  {data}  = await axios(`https://api.mercadolibre.com/sites/MLA/search?q=${datos}&limit=12`)
+        const  {data}  = await axios(`https://api.mercadolibre.com/sites/MLU/search?q=${datos}&limit=12`)
         setResultados(data.results)
     }
     const abrirBusqueda = () =>{
@@ -76,7 +81,7 @@ const MlProvider = ({children}) => {
         const notificacionesActualizadas = notificacion.filter(noti => noti.id !== id)
         setNotificacion(notificacionesActualizadas)
     }
-
+console.log(oferta);
      useEffect(()=>{
          obtenerIphone()
          obtenerOferta()
@@ -97,6 +102,7 @@ const MlProvider = ({children}) => {
         verDetallesGeneral,
         verDetallesVistas,
         verDetallesOferta,
+        verDetallesSugeridos,
         verDetalleResultados,
         eliminarNotificacion,
         abrirBusqueda,
