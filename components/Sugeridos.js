@@ -6,7 +6,7 @@ const Sugeridos = ({sugerido}) => {
     const {title, price, thumbnail, id} = sugerido
 
   return (
-    <div className="bg-white pl-3 card shadow-2xl m-2 rounded-md"  >
+    <div className="bg-white pl-3 card shadow-2xl m-2 rounded-md pb-36"  >
         <div>
             <img className="w-72 mx-auto p-3" alt={title} src={thumbnail}/>
         </div>
