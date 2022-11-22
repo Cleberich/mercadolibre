@@ -7,8 +7,8 @@ const Portada = () => {
         src='/img/banner.jpeg'
         className="w-full"
         alt='banner'
-        width={400}
-        height={200}
+        width={360}
+        height={246}
         priority={true}
         />
         <Image 
