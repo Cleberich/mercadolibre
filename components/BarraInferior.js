@@ -3,7 +3,7 @@ const BarraInferior = () => {
     const router = useRouter()
   return (
     <>
-    <div className="flex justify-between  w-full px-7 py-2 bg-white fixed bottom-0">
+    <div className="flex justify-between  w-full px-7 py-2 bg-white fixed bottom-0 border-t-2">
         <div onClick={() => {
             router.push('/')}}  
             className="text-center">

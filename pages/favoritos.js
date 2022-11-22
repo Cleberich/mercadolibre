@@ -20,10 +20,11 @@ export default function favoritos() {
 
   return (
     <>
-    <head>
+    <Head>
         <title>MercadoLibre - Productos Favoritos</title>
         <meta name="description" content="tus productos favoritos"/>
-    </head>
+    </Head>
+    <main className='bg-white h-screen'>
     <div className='bg-amarillo p-3 flex justify-center'>
         <h2 className='text-center mr-28'>Favoritos</h2>
         <button className='-mr-16'>
@@ -47,6 +48,7 @@ export default function favoritos() {
        />
        ))}
     </div>
+    </main>
     <BarraInferior/>
     </>
   )

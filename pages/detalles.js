@@ -12,9 +12,10 @@ export default function Detalles() {
 
   return (
 <>
-    <head>
-      <title>MercadoLibre - {detalle.title = 'Detalles'}</title>
-    </head>
+    <Head>
+      <title>{`MercadoLibre - ${detalle.title}`}</title>
+      <meta name='description' content={`Producto ${detalle.title}`}/>
+    </Head>
     <div className='bg-white h-screen'>
     <div className='bg-amarillo py-4 flex justify-between sticky top-0'>
       <div>

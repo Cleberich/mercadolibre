@@ -7,7 +7,7 @@ export default function Layout({children}) {
     <>
         <Head>
             <meta charset="utf-8"/>
-            <title>Mercado Libre</title>
+            <title>{'Mercado Libre - Inicio'}</title>
             <meta name="description" content="En MercadoLibre encontras todo lo que buscas, articulos de hogar, jardin, electrodomesticos,celulares, electronica, tecnologia, indumentaria y más"/>
         </Head>
         <body className="bg-amarillo">
