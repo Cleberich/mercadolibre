@@ -9,7 +9,7 @@ export default function Document() {
             <meta name='description' content='Todo lo que buscas lo encontras aca'/>
             <meta charset="utf-8"/>
         </Head>
-        <body className='bg-red-500'>
+        <body className='bg-amarillo'>
             <Main/>
             <NextScript/>
         </body>
