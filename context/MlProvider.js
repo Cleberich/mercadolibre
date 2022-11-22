@@ -32,12 +32,12 @@ const MlProvider = ({children}) => {
      }
      const verDetallesVistas = (id) =>{
         const vistaDetalle = vistas.filter(prod => prod.id == id)
-        setDetalle(vistaDetalle)
+        setDetalle(vistaDetalle[0])
         router.push('/detalles')
      }
      const verDetallesOferta = (id) =>{
         const vistaDetalle = oferta.filter(prod => prod.id == id)
-        setDetalle(vistaDetalle)
+        setDetalle(vistaDetalle[0])
         router.push('/detalles')
      }
      const obtenerOfertaSugeridos = async () =>{
